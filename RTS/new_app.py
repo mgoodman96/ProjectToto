@@ -4,7 +4,7 @@ import pandas as pd
 #import geopandas as gpd
 import pandas as gpd
 #import folium
-from streamlit_folium import folium_static
+#from streamlit_folium import folium_static
 import os
 import time
 
