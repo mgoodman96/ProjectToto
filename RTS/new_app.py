@@ -1,12 +1,19 @@
-import streamlit as st
+#import streamlit as st
 import pandas as pd
 #import conda
 #import geopandas as gpd
-import pandas as gpd
+#import pandas as gpd
 #import folium
 #from streamlit_folium import folium_static
 import os
 import time
+
+with st.echo():
+    import folium
+    import streamlit as st
+    import geopandas as gpd
+
+    from streamlit_folium import st_folium
 
 # Load Iowa county boundaries
 script_dir = os.path.dirname(__file__)
