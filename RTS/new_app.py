@@ -3,7 +3,7 @@ import pandas as pd
 #import conda
 #import geopandas as gpd
 import pandas as gpd
-import folium
+#import folium
 from streamlit_folium import folium_static
 import os
 import time
