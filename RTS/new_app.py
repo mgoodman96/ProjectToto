@@ -8,12 +8,7 @@ import pandas as pd
 import os
 import time
 
-with st.echo():
-    import folium
-    import streamlit as st
-    import geopandas as gpd
 
-    from streamlit_folium import st_folium
 
 # Load Iowa county boundaries
 script_dir = os.path.dirname(__file__)
@@ -119,6 +114,13 @@ with col2:
 
     merged_df['color'] = merged_df['risk'].apply(get_color)
     merged_df['risk'] = merged_df['risk'].round(4)
+
+    with st.echo():
+    import folium
+    import streamlit as st
+   #import geopandas as gpd
+
+    from streamlit_folium import st_folium
 
     # Center the map on Iowa
     m = folium.Map(location=[41.878, -93.097], zoom_start=7)
