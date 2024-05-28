@@ -116,37 +116,37 @@ with col2:
     merged_df['risk'] = merged_df['risk'].round(4)
 
     with st.echo():
-    import folium
-    import streamlit as st
+        import folium
+        import streamlit as st
    #import geopandas as gpd
 
-    from streamlit_folium import st_folium
+        from streamlit_folium import st_folium
 
     # Center the map on Iowa
-    m = folium.Map(location=[41.878, -93.097], zoom_start=7)
+        m = folium.Map(location=[41.878, -93.097], zoom_start=7)
 
-    # Function to style the counties
-    def style_function(feature):
-        return {
-            'fillColor': feature['properties']['color'],
-            'color': '#c04e01',
-            'weight': 1,
-            'fillOpacity': 0.7,
-        }
-
-    # Add the GeoJSON to the map
-    folium.GeoJson(
-        merged_df,
-        name='Iowa Tornado Risk',
-        style_function=style_function,
-        tooltip=folium.GeoJsonTooltip(fields=['CountyName', 'risk'], aliases=['County', 'Tornado Risk'])
-    ).add_to(m)
-
-    # Add a layer control panel
-    folium.LayerControl().add_to(m)
-
-    # Display the map
-    folium_static(m, width=700, height=500)
+        # Function to style the counties
+        def style_function(feature):
+            return {
+                'fillColor': feature['properties']['color'],
+                'color': '#c04e01',
+                'weight': 1,
+                'fillOpacity': 0.7,
+            }
+    
+        # Add the GeoJSON to the map
+        folium.GeoJson(
+            merged_df,
+            name='Iowa Tornado Risk',
+            style_function=style_function,
+            tooltip=folium.GeoJsonTooltip(fields=['CountyName', 'risk'], aliases=['County', 'Tornado Risk'])
+        ).add_to(m)
+    
+        # Add a layer control panel
+        folium.LayerControl().add_to(m)
+    
+        # Display the map
+        folium_static(m, width=700, height=500)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
