@@ -9,11 +9,13 @@ import os
 import time
 
 
+with st.echo():
+    import geopandas as gpd
 
-# Load Iowa county boundaries
-script_dir = os.path.dirname(__file__)
-geojson_path = os.path.join(script_dir, 'Iowa_County_Boundaries.geojson')
-iowa_geo = gpd.read_file(geojson_path)
+    # Load Iowa county boundaries
+    script_dir = os.path.dirname(__file__)
+    geojson_path = os.path.join(script_dir, 'Iowa_County_Boundaries.geojson')
+    iowa_geo = gpd.read_file(geojson_path)
 
 # Function to load data from the Parquet file
 def load_dataframe(parquet_file='tornado_risk.parquet'):
